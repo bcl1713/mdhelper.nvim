@@ -5,7 +5,7 @@ end
 local function handle_lists()
 	local current_line = vim.api.nvim_get_current_line()
 	vim.api.nvim_feedkeys("\n", "n", true)
-	if string.find(current_line, "- [ ]", 0, true) or string.find(current_line, "- [x]", 0, true) then
+	if string.find(current_line, "%- %[.]") then
 		vim.api.nvim_feedkeys("- [ ] ", "n", true)
 	elseif string.find(current_line, "- ", 0, true) then
 		vim.api.nvim_feedkeys("- ", "n", true)
