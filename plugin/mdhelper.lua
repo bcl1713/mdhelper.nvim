@@ -26,6 +26,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			vim.keymap.set("i", "<cr>", function()
 				handle_lists()
 			end, { buffer = tonumber(data.buf), noremap = true })
+      vim.api.nvim_set_option_value("textwidth", 80, {buf=tonumber(data.buf)})
 		end
 	end,
 })
